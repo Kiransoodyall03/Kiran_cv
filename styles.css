@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +7,6 @@ body {
     color: #333;
 }
 
-/* Header */
 header {
     background-color: #005f73;
     color: white;
@@ -20,7 +18,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -34,7 +32,7 @@ header {
 .header-text h1 {
     margin: 0;
     font-size: 2rem;
-    word-wrap: break-word; /* Prevents long text from overflowing */
+    word-wrap: break-word;
 }
 
 .header-text p {
@@ -42,7 +40,6 @@ header {
     font-size: 1.2rem;
 }
 
-/* Navigation */
 nav {
     margin-top: 15px;
 }
@@ -53,7 +50,7 @@ nav {
     list-style: none;
     padding: 0;
     gap: 20px;
-    flex-wrap: wrap; /* Allows navigation links to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 .nav-links li {
@@ -67,8 +64,7 @@ nav {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s;
-    text-align: center; /* Ensures text inside links is properly aligned */
-}
+    text-align: center;
 
 .nav-links a:hover {
     background-color: #94d2bd;
@@ -85,21 +81,20 @@ section {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures content doesn't overflow the section container */
+    overflow: hidden;
 }
 
 section h2 {
     border-bottom: 2px solid #005f73;
     padding-bottom: 10px;
     margin-bottom: 15px;
-    word-wrap: break-word; /* Handles long titles gracefully */
+    word-wrap: break-word;
 }
 
-/* Ensure text isn't cut off */
 section p, section ul {
     margin: 0;
     padding: 0;
-    line-height: 1.8; /* Increases spacing for better readability */
+    line-height: 1.8;
     word-wrap: break-word;
 }
 
@@ -121,13 +116,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column; /* Stacks header content on small screens */
+        flex-direction: column;
     }
     
     .nav-links {
-        flex-direction: column; /* Stacks navigation links vertically on small screens */
+        flex-direction: column;
     }
 }
