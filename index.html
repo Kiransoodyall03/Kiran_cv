@@ -1,282 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiran Soodyall - CV</title>
-
     <style>
-        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
+            color: #1a1a1a;
             background-color: #f4f4f9;
-            color: #333;
+            min-height: 100vh;
+            padding: 2rem 1rem;
         }
 
-        /* ===== Header ===== */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
         header {
-            background-color: #005f73;
+            background-color: #0077b6;
             color: white;
-            padding: 20px;
+            padding: 3rem 2rem;
+        }
+
+        .header-content {
             text-align: center;
         }
 
-        .header-container {
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: 0.5rem;
         }
 
-        .profile-pic {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-        }
-
-        .header-text h1 {
-            margin: 0;
-            font-size: 2rem;
-            word-wrap: break-word;
-        }
-
-        .header-text p {
-            margin: 5px 0 0;
-            font-size: 1.2rem;
-        }
-
-        /* ===== Navigation ===== */
-        nav {
-            margin-top: 15px;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links li {
-            display: inline;
-        }
-
-        .nav-links a {
-            text-decoration: none;
+        .contact-item a {
             color: white;
-            background-color: #0a9396;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            text-align: center;
-            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
         }
 
-        .nav-links a:hover {
-            background-color: #94d2bd;
+        .contact-item a:hover {
+            border-color: white;
         }
 
-        /* ===== Main Sections ===== */
         main {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
+            padding: 2.5rem 2rem;
         }
 
         section {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            margin-bottom: 2.5rem;
         }
 
-        section h2 {
-            border-bottom: 2px solid #005f73;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            word-wrap: break-word;
+        h2 {
+            font-size: 1.6rem;
+            color: #0077b6;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #0077b6;
+            display: inline-block;
         }
 
-        section p,
-        section ul {
-            margin: 0;
-            padding: 0;
-            line-height: 1.8;
-            word-wrap: break-word;
+        .item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0077b6;
         }
 
-        section ul {
-            padding-left: 20px;
-        }
-
-        /* ===== CV Blocks ===== */
-        .education-item,
-        .experience-item,
-        .project-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #fafafa;
-            border-radius: 5px;
-            border-left: 5px solid #005f73;
+        .item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
         }
 
         .company {
-            font-weight: bold;
+            font-weight: 600;
+            color: #0077b6;
+            font-size: 1rem;
         }
 
         .date {
             font-size: 0.9rem;
             color: #555;
+            font-weight: 500;
+            white-space: nowrap;
         }
 
-        /* ===== Skills ===== */
+        .location {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0.75rem;
+        }
+
+        .item ul li {
+            padding-left: 1.5rem;
+            margin: 0.4rem 0;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .item ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #0077b6;
+            font-weight: bold;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
+            gap: 1rem;
         }
 
         .skill-category {
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            background: white;
-        }
-
-        /* ===== Footer ===== */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #005f73;
+            background-color: #0077b6;
             color: white;
-            margin-top: 20px;
+            padding: 1.2rem;
+            border-radius: 8px;
         }
 
-        footer a {
-            color: #94d2bd;
+        .skill-category:hover {
+            background-color: #005f8a;
+        }
+
+        .skill-category h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: #0077b6;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .status-badge.testing {
+            background-color: #e67e22;
+        }
+
+        .status-badge.live {
+            background-color: #27ae60;
+        }
+
+        a {
+            color: #0077b6;
             text-decoration: none;
+            font-weight: 500;
         }
 
-        footer a:hover {
+        a:hover {
             text-decoration: underline;
         }
 
-        /* ===== Responsive ===== */
+        .project-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.4rem 1rem;
+            background-color: #0077b6;
+            color: white;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+
+        .project-link:hover {
+            background-color: #005f8a;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
-            .header-container {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            header {
+                padding: 2rem 1.5rem;
+            }
+
+            main {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .item-header {
                 flex-direction: column;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Kiran Soodyall</h1>
+                <p class="tagline">Computer Science Student & Full-Stack Developer</p>
+                <div class="contact-bar">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:kiransoodyall03@gmail.com">kiransoodyall03@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+27 61 424 7839</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span>
+                        <a href="https://github.com/Kiransoodyall03" target="_blank">GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<header>
-    <div class="header-container">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <div class="header-text">
-            <h1>Kiran Soodyall</h1>
-            <p>Computer Science Student</p>
-        </div>
+        <main>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Bachelor of Science</h3>
+                            <p class="company">University of the Witwatersrand</p>
+                            <p class="location">Double Major: Computer Science & Applied Mathematics</p>
+                        </div>
+                        <span class="date">2023 - 2026</span>
+                    </div>
+                    <p style="margin-top: 0.75rem;">Currently in 2nd Year</p>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Matric Certificate</h3>
+                            <p class="company">Parktown Boys' High School</p>
+                        </div>
+                        <span class="date">2021</span>
+                    </div>
+                    <p style="margin-top: 0.75rem;">Subjects: Mathematics, Advanced Mathematics, Accounting, IT (Coding), Physical Sciences, Business Studies</p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Professional Experience</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Mathematics Tutor</h3>
+                            <p class="company">Memby</p>
+                            <p class="location">Remote</p>
+                        </div>
+                        <span class="date">2025</span>
+                    </div>
+                    <ul>
+                        <li>Taught online mathematics to students aged 15-19</li>
+                        <li>Adapted teaching methods for remote learning environments</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Software Development Intern</h3>
+                            <p class="company">BBD Vac Work Programme</p>
+                            <p class="location">Rosebank, Johannesburg</p>
+                        </div>
+                        <span class="date">Dec 2024 - Jan 2025</span>
+                    </div>
+                    <ul>
+                        <li>Collaborated in a team to develop a web application for school project organization</li>
+                        <li>Utilized Docker, Prisma, Java, Figma, DBeaver, API integration, and React</li>
+                        <li>Gained hands-on experience with full-stack development and containerization</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>All Subjects Tutor</h3>
+                            <p class="company">Freelance / Rocket Results</p>
+                            <p class="location">In-Person</p>
+                        </div>
+                        <span class="date">2022 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Tutored 15-19-year-old students across all subjects including advanced mathematics</li>
+                        <li>Notable success: Helped Gradon Stevenson improve Mathematics marks from high 50s to high 80s/low 90s</li>
+                        <li>Developed custom teaching materials tailored to individual learning styles</li>
+                        <li>Part of Rocket Results tuition team, currently developing web application for direct tutor bookings with integrated payment portal</li>
+                    </ul>
+                    <a href="https://tuitionwebapp.web.app" target="_blank" class="project-link">View Tuition Web App</a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects & Extracurricular</h2>
+                
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>NightLife App</h3>
+                            <span class="status-badge testing">Closed Testing</span>
+                        </div>
+                        <span class="date">Jan 2025 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Mobile app featuring Tinder-like swipe experience for restaurants, bars, and clubs</li>
+                        <li>Friends match based on venue preferences with in-app Uber ordering</li>
+                        <li>Sole developer responsible for Backend, Frontend, Design, and Architecture</li>
+                        <li>Access by email request: kiransoodyall03@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Squash Club Tournament Management System</h3>
+                            <span class="status-badge live">Live</span>
+                        </div>
+                        <span class="date">Dec 2024 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Full-stack web application for managing squash club tournaments and player rankings</li>
+                        <li>Features include: Tournament creation with round-robin group generation, ELO rating system using Chess.com algorithm, individual 1v1 and 2v2 match tracking, player leaderboard, and member management</li>
+                        <li>Built with React, Firebase (Authentication, Firestore, Hosting), and Framer Motion</li>
+                        <li>Sole developer responsible for full system architecture, UI/UX design, and deployment</li>
+                    </ul>
+                    <a href="https://squashclub-e8a0c.web.app" target="_blank" class="project-link">View Live App</a>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>AI Chatbot</h3>
+                        </div>
+                        <span class="date">Past Project</span>
+                    </div>
+                    <p style="margin-top: 0.5rem;">Developed conversational AI chatbot demonstrating machine learning capabilities</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Wits Volleyball Team</h3>
+                            <span class="status-badge">Active</span>
+                        </div>
+                        <span class="date">March 2025 - Present</span>
+                    </div>
+                    <p style="margin-top: 0.5rem;">Member of the Wits student volleyball team, competing in inter-university matches</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div>
+                            <h3>Model - GAPA Models</h3>
+                        </div>
+                        <span class="date">June 2025 - Present</span>
+                    </div>
+                    <p style="margin-top: 0.5rem;">Registered model with GAPA Models agency</p>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <p>JavaScript, TypeScript, Python, C++, Java, SQL</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Web Development</h4>
+                        <p>React, Firebase, HTML/CSS, Full-Stack Development, API Integration</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Tools & Frameworks</h4>
+                        <p>Docker, Prisma, GitHub, DBeaver, Figma, Premier Pro</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Soft Skills</h4>
+                        <p>Team Collaboration, Public Speaking, Time Management, Conflict Resolution</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Certifications</h4>
+                        <p>Level 5 TEFL Certificate</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Personal Interests</h4>
+                        <p>Squash (Parkview Club), Gym Training (3+ years), Chess (1500+ ELO), LeetCode Practice</p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-
-    <!-- EDUCATION -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-            <div class="item-header">
-                <span class="company">BSc in Computer Science</span>
-                <span class="date">2023 – 2026</span>
-            </div>
-            <p>University of [Your University]</p>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project-item">
-            <div class="item-header">
-                <span class="company">Scientific Calculator Web App</span>
-                <span class="date">2024</span>
-            </div>
-            <ul>
-                <li>Built using pure HTML, CSS, and TypeScript (TSX).</li>
-                <li>Hosted on GitHub Pages with full client-side computation.</li>
-                <li>Implemented mathematical expression parsing without using eval().</li>
-                <li>Focused on security, performance, and responsive UI design.</li>
-            </ul>
-        </div>
-
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Languages</h4>
-                <p>Java, Python, TypeScript, JavaScript</p>
-            </div>
-
-            <div class="skill-category">
-                <h4>Web</h4>
-                <p>HTML, CSS, React Native, Expo</p>
-            </div>
-
-            <div class="skill-category">
-                <h4>Tools</h4>
-                <p>Git, GitHub, Firebase</p>
-            </div>
-
-            <div class="skill-category">
-                <h4>Concepts</h4>
-                <p>Data Structures, Algorithms, Graph Theory</p>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer id="contact">
-    <p>Email: example@email.com | GitHub: <a href="#">github.com/yourname</a></p>
-</footer>
-
 </body>
 </html>
