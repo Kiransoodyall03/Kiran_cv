@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kiran Soodyall - CV</title>
+
+    <style>
+        /* ===== Base Styles ===== */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* ===== Header ===== */
+        header {
+            background-color: #005f73;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 2rem;
+            word-wrap: break-word;
+        }
+
+        .header-text p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            margin-top: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            background-color: #0a9396;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #94d2bd;
+        }
+
+        /* ===== Main Sections ===== */
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        section p,
+        section ul {
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            word-wrap: break-word;
+        }
+
+        section ul {
+            padding-left: 20px;
+        }
+
+        /* ===== CV Blocks ===== */
+        .education-item,
+        .experience-item,
+        .project-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 5px;
+            border-left: 5px solid #005f73;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .company {
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* ===== Skills ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .skill-category {
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #005f73;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #94d2bd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="header-text">
+            <h1>Kiran Soodyall</h1>
+            <p>Computer Science Student</p>
+        </div>
+    </div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="item-header">
+                <span class="company">BSc in Computer Science</span>
+                <span class="date">2023 – 2026</span>
+            </div>
+            <p>University of [Your University]</p>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span class="company">Scientific Calculator Web App</span>
+                <span class="date">2024</span>
+            </div>
+            <ul>
+                <li>Built using pure HTML, CSS, and TypeScript (TSX).</li>
+                <li>Hosted on GitHub Pages with full client-side computation.</li>
+                <li>Implemented mathematical expression parsing without using eval().</li>
+                <li>Focused on security, performance, and responsive UI design.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <p>Java, Python, TypeScript, JavaScript</p>
+            </div>
+
+            <div class="skill-category">
+                <h4>Web</h4>
+                <p>HTML, CSS, React Native, Expo</p>
+            </div>
+
+            <div class="skill-category">
+                <h4>Tools</h4>
+                <p>Git, GitHub, Firebase</p>
+            </div>
+
+            <div class="skill-category">
+                <h4>Concepts</h4>
+                <p>Data Structures, Algorithms, Graph Theory</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="contact">
+    <p>Email: example@email.com | GitHub: <a href="#">github.com/yourname</a></p>
+</footer>
+
+</body>
+</html>
